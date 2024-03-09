@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.spring'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation platform('org.junit:junit-bom:5.9.1')
+    testImplementation 'org.junit.jupiter:junit-jupiter'
+
+    implementation 'org.slf4j:slf4j-api:1.7.30'
+}
+
+test {
+    useJUnitPlatform()
+}
