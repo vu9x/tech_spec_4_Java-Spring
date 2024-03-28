@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Table page</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>First name</th>
+            <th>Middle name</th>
+            <th>Age</th>
+        </tr>
+
+<!--        <tr>-->
+<!--            <th>Николай</th>-->
+<!--            <th>Иванович</th>-->
+<!--            <th>10</th>-->
+<!--        </tr>-->
+
+<!--        <tr>-->
+<!--            <th>Василий</th>-->
+<!--            <th>Петрович</th>-->
+<!--            <th>15</th>-->
+<!--        </tr>-->
+
+<!--        <tr>-->
+<!--            <th>Екатерина</th>-->
+<!--            <th>Ивановна</th>-->
+<!--            <th>11</th>-->
+<!--        </tr>-->
+<!--    </table>-->
+
+<!--    <table>-->
+<!--        <tr>-->
+<!--            <th>First name</th>-->
+<!--            <th>Middle name</th>-->
+<!--            <th>Age</th>-->
+<!--        </tr>-->
+
+        <tr th:each="person: ${table}">
+            <td th:text="${person.getFirstName()}"></td>
+            <td th:text="${person.getMiddleName()}"></td>
+            <td th:text="${person.getAge()}"></td>
+        </tr>
+    </table>
+</body>
+</html>

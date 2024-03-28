@@ -64,4 +64,15 @@ public class IssueService {
         return issueRepository.findById(id);
     }
 
+    public List<Issue> getAllIssues(){
+        List<Issue> allIssues = issueRepository.getList();
+
+        if(allIssues.isEmpty()){
+            String message = "Нет выданных записей";
+            log.info(message);
+            throw new NoSuchElementException(message);
+        }
+        return allIssues;
+    }
+
 }

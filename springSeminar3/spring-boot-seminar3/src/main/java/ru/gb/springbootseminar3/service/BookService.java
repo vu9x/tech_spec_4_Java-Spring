@@ -7,6 +7,7 @@ import ru.gb.springbootseminar3.entity.Book;
 import ru.gb.springbootseminar3.repository.BookRepository;
 import ru.gb.springbootseminar3.requests.BookRequest;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Slf4j
@@ -17,6 +18,16 @@ public class BookService {
     @Autowired
     public BookService(BookRepository bookRepository) {
         this.bookRepository = bookRepository;
+    }
+
+    public List<Book> getAllBooks(){
+        List<Book> library = bookRepository.getList();
+
+        if(library.isEmpty()){
+            log.info("В библиотеке нет книг");
+            throw new NoSuchElementException("В библиотеке нет книг");
+        }
+        return library;
     }
 
     public Book createBook(BookRequest bookRequest){

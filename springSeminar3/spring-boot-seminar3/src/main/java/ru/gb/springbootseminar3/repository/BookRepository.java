@@ -17,6 +17,10 @@ public class BookRepository {
         list.add(new Book("Приключение Буратино"));
     }
 
+    public List<Book> getList() {
+        return list;
+    }
+
     public Book findById(long id){
         return list.stream()
                 .filter(e -> e.getId() == id)

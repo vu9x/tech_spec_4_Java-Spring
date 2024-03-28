@@ -15,7 +15,11 @@ public class ReaderRepository {
         list.add(new Reader("Костя"));
         list.add(new Reader("Василий"));
         list.add(new Reader("Семен"));
-            }
+    }
+
+    public List<Reader> getList() {
+        return list;
+    }
 
     public Reader findById(long id){
         return list.stream()

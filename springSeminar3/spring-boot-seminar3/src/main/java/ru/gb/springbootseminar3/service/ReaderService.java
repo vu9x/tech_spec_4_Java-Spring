@@ -47,7 +47,14 @@ public class ReaderService {
         return readerRepository.deleteReaderById(id);
     }
 
-//    public List<Issue> issuedBooksToReader(){
-//
-//    }
+    public List<Reader> getAllReaders(){
+        List<Reader> allReaders = readerRepository.getList();
+
+        if(allReaders.isEmpty()){
+            String message = "В библиотеке нет читателей";
+            log.info(message);
+            throw new NoSuchElementException(message);
+        }
+        return allReaders;
+    }
 }
