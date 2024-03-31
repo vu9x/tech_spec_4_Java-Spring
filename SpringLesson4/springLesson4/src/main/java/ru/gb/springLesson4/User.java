@@ -1,9 +1,19 @@
 package ru.gb.springLesson4;
 
+import jakarta.persistence.*;
+
+@Entity
+@Table(name="users")
 public class User {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String name;
     private String email;
+
+    public User() {
+    }
 
     public User(Long id, String name, String email) {
         this.id = id;

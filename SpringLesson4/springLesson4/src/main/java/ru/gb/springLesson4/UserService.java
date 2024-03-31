@@ -8,17 +8,17 @@ import java.util.List;
 @Service
 public class UserService {
     @Autowired
-    private UserRepository userRepository;
+    private UserRepositoryDB userRepositoryDB;
 
 
     public List<User> getAllUsers(){
-        userRepository.save(new User(null, "Evgeny", "abc@gmail.com"));
-        userRepository.save(new User(null, "Mike", "mike@gmail.com"));
-        userRepository.save(new User(null, "John", "john@gmail.com"));
-        return userRepository.findAll();
+        userRepositoryDB.save(new User(null, "Evgeny", "abc@gmail.com"));
+        userRepositoryDB.save(new User(null, "Mike", "mike@gmail.com"));
+        userRepositoryDB.save(new User(null, "John", "john@gmail.com"));
+        return userRepositoryDB.findAll();
     }
 
     public User getUserById(Long id){
-        return userRepository.findById(id);
+        return userRepositoryDB.findById(id).get();
     }
 }
