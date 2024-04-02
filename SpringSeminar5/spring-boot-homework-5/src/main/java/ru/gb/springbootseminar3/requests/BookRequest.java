@@ -6,7 +6,5 @@ import lombok.RequiredArgsConstructor;
 @Data
 @RequiredArgsConstructor
 public class BookRequest {
-
-
     private String name;
 }
