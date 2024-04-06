@@ -1,0 +1,8 @@
+#spring.application.name=microservice1
+
+spring:
+  application:
+    name: microservice2
+
+server:
+  port: 8082
