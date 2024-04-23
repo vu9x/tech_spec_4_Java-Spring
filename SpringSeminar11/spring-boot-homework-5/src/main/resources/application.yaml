@@ -1,0 +1,21 @@
+#spring.application.name=spring-boot-seminar3
+#server.errror.include-message = ALWAYS
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5433/librarydb
+    username: myuser
+    password: mypassword
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+management:
+  endpoint:
+    env:
+      show-values: ALWAYS
+  endpoints:
+    web:
+      exposure:
+        include: env, prometheus, health, info, metric
