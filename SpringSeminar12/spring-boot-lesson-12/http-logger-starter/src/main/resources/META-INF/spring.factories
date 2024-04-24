@@ -1,0 +1,2 @@
+// Деприкейтед с версии spring 2.7
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.gb.HttpAutoconfiguration
